@@ -8,9 +8,20 @@
     <%= stylesheet_link_tag "application", media: "all",
       "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+        <link href="vendor/bootstrap/css/bootstrap.min.scss" rel="stylesheet">
+        <link href="css/style.scss" rel="stylesheet">
+        <link href="css/responsive.scss" rel="stylesheet">
+        <link href="css/mega.menu.scss" rel="stylesheet">
   </head>
 
   <body>
+    <div class="container-fluid">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <% if user_signed_in? %> 
+      <%= render 'layouts/header' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
