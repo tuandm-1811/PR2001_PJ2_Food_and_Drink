@@ -1,0 +1,127 @@
+
+
+<header id="header" class="default">
+			<div class="topbar">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="topbar-left text-center text-md-left">
+									<ul class="list-inline">
+										<li> <a href="#"> Contact </a></li>
+										<li> <a href="#"> About Us </a></li>
+										<li> <a href="#"> Blog </a></li>											
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="topbar-right text-center text-md-right">
+									<ul class="list-inline">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.username%></a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                                                <%= link_to "Setting", edit_user_registration_path, class:"dropdown-item" %>
+                                                <%= link_to "Logout", destroy_user_session_path,class:"dropdown-item", :method => :delete %>
+                                            </div>
+                                        </li> 								
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2 col-sm-12 col-xs-12">
+							<div class="menu-left text-center text-md-left">
+								<div class="logo-box">
+									<a href="index.html"><img src="images/logo.svg" alt=""></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-10 col-sm-12 col-xs-12">	
+							<div class="menu-items">
+								<nav class="navbar navbar-expand-lg navbar-light bg-light menu-right">										
+									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
+
+									<div class="collapse navbar-collapse" id="navbarSupportedContent">
+										<ul class="navbar-nav mr-auto nav-text">
+											<li class="nav-item">
+												<a class="nav-link" href="index.html">Home </a>
+											</li>
+										</ul>											
+									</div>									
+								</nav>
+									<li class="partner-btn">
+											<a href="partner_with_us.html" class="b-btn btn-link">Become a Partner</a>
+										</li>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>				
+		</header>
+
+	<footer class="footer">
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+					<div class="img-title">
+						<a href="index.html"><img src="images/logo-2.svg" alt=""></a>
+					</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum leo at finibus ornare. 
+					Aliquam gravida condimentum neque, vel ultrices purus dignissim a. </p>
+				</div>
+				<div class="col-md-3 col-sm-12 col-xs-12">
+					<div class="link-title">
+						<h4>About Natto</h4>
+						<ul class="links">
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="our_blog.html">Blog</a></li>
+							<li><a href="#">Developers</a></li>
+							<li><a href="#">Mobile Apps</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>					
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+					<div class="link-title">
+						<h4>Business</h4>
+						<ul class="links">
+							<li><a href="add_restaurant.html">Add a Restaurant</a></li>
+							<li><a href="#">Buniess Order Guidelines</a></li>
+							<li><a href="#">Orders</a></li>
+							<li><a href="#">Book</a></li>
+							<li><a href="#">Trace</a></li>
+							<li><a href="#">Advertise</a></li>
+						</ul>
+					</div>					
+				</div>
+								
+			</div>
+		</div>
+		<div class="privacy-cards">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="privacy-terms">
+							<ul>
+								<li><a href="#">Privacy</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="#">Sitemap</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="cards">
+							<img src="images/cards.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
