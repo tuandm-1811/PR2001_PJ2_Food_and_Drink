@@ -29,21 +29,22 @@
                                     </div>
                                     <div class="form-group">
                                         <%= f.label :email %><br />
-                                        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,id:"emailAddress" ,placeholder:"Email Address" %>
+                                        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"form-control",id:"emailAddress" ,placeholder:"Email Address" %>
                                     </div>
 
                                     <div class="form-group">
                                         <%= f.label :password %><br />
-                                        <%= f.password_field :password, autocomplete: "new-password" ,id:"password1" ,placeholder:"Password" %>
+                                        <%= f.password_field :password, autocomplete: "new-password" ,id:"password1" ,class:"form-control",placeholder:"Password" %>
                                     </div>
         
                                     <div class="form-group">
                                         <%= f.label :password_confirmation %><br>
-                                        <%= f.password_field :password_confirmation, autocomplete: "new-password",id:"password1" ,placeholder:"Password confirmation" %>
+                                        <%= f.password_field :password_confirmation, autocomplete: "new-password",id:"password1" ,class:"form-control",placeholder:"Password confirmation" %>
                                     </div>
         
                                     <div class="actions">
                                         <%= f.submit "Sign up",class:"btn btn-warning" %>
+                                        <%= link_to "Back to Login", signin_path %> 
                                     </div>
                                 </div>
                             <% end %>

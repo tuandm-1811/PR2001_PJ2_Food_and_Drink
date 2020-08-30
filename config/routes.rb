@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     root 'homepages#home'
     get 'home', to: 'homepages#home'
     resources :users, only: :show
+    resources :password_resets, only: [:new, :create, :edit,:update]
   end 
