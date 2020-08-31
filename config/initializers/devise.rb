@@ -20,7 +20,19 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   config.expire_all_remember_me_on_sign_out = true
-
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: '587',
+    authentication: :plain,
+    user_name: 'framgiatest',
+    password: 'framgia123456',
+    domain: 'gmail.com',
+    enable_starttls_auto: true
+  }
 
   config.password_length = 6..128
 

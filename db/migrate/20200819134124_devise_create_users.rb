@@ -27,11 +27,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
        t.string   :last_sign_in_ip
       #  theo doi so lan dang nhap va dia chi IP
 
-      ## Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email 
+      #Confirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email 
       # gui email xac nhan va xac minh voi tai khoan vua dang ky
 
       ## Lockable
