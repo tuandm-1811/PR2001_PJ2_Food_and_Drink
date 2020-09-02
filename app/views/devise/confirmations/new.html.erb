@@ -1,16 +1,45 @@
-<h2>Resend confirmation instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+	<div class="container padding-bottom-3x mb-2 mt-5">
+	    <div class="row justify-content-center">
+	        <div class="col-lg-8 col-md-10">
+	            <div class="forgot">
+                <h2>Resend unlock instructions</h2>
+	            </div>
+              <form class="card mt-4">
+                <div class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form_control",placeholder:"Enter your email" %>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit "Resend unlick instructions",class:"btn btn-primary btn-lg active" %>
+                </div>
+                <%- if controller_name != 'sessions' %>
+                  <%= link_to "Log in", new_session_path(resource_name) %><br />
+                <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+                <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+                <% end %>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+                <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+                  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+                <% end %>
 
-<%= render "devise/shared/links" %>
+                <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+                  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+                <% end %>
+
+                <%- if devise_mapping.omniauthable? %>
+                  <%- resource_class.omniauth_providers.each do |provider| %>
+                    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", user_google_oauth2_omniauth_authorize_path(resource_name, provider) %><br />
+                  <% end %>
+                <% end %>
+              <% end %>
+              </form>
+              </div>
+	        </div>
+	    </div>
+	</div>
+    
