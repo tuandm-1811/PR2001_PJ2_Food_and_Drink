@@ -40,6 +40,8 @@ group :development, :test do
   gem "rspec-rails", "~>3.4"
   gem "capybara", ">=2.15"
   gem "faker"
+  gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '5.x'
+  gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '5.x'
   # gem faker la tao du lieu ao de chay test
 end
 
