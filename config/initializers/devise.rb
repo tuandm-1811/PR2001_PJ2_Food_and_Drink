@@ -22,9 +22,9 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   config.expire_all_remember_me_on_sign_out = true
-  config.omniauth :google_oauth2, "332766000256-ek9ogulku4cgvdolcafhlpn49lkt12b8.apps.googleusercontent.com","SmFL0F98e29KmxCTC2b_scS6"
+  config.omniauth :google_oauth2, "332766000256-kruhcsq562j5vf9req9vutgo5itdfo79.apps.googleusercontent.com","0TKOSq1h1bpOwlj6hpx0WraD"
   {
-    scope: 'email', info_fields: 'email',access_type: 'offline',
+    access_type: 'offline',
     approval_prompt: 'force'
   }
   config.password_length = 6..128
