@@ -15,7 +15,13 @@
 										</div>
 										<div class="social-btns">
 											<button class="facebook-btn"><i class="fab fa-facebook-f"></i>Continue with facebook</button>
-											<button class="google-btn"><i class="fab fa-google"></i>Continue with Google</button>
+											<button class="google-btn"><i class="fab fa-google"></i>
+											<%- if devise_mapping.omniauthable? %>
+												<%- resource_class.omniauth_providers.each do |provider| %>
+													<%= link_to "Continue in with Google", user_google_oauth2_omniauth_authorize_path %><br />
+												<% end %>
+											<% end %>
+											</button>
 										</div>
 										<div class="or">
 											<p> Or </p>
@@ -35,7 +41,25 @@
 											</div>
 										<% end -%>
                         				<%= f.submit "Log in", class: 'btn btn-warning' %>
-										<%= render "devise/shared/links" %>			
+										<%- if controller_name != 'sessions' %>
+											<%= link_to "Log in", new_session_path(resource_name) %><br />
+										<% end %>
+
+										<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+											<%= link_to "Sign up", new_registration_path(resource_name) %><br />
+										<% end %>
+
+										<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+											<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+										<% end %>
+
+										<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+											<%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+										<% end %>
+
+										<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+											<%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+										<% end %>
 									</div>	
 								</form>
 							</div>
