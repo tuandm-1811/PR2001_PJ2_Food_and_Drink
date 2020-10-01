@@ -20,6 +20,7 @@ end
     end
     resources :products, only: [:index]
     resources :toppings, except: [:update, :edit, :show]
+    resources :orders, only: [:index]
   end
 
 
@@ -46,6 +47,8 @@ end
   resources :carts, only:[:create, :index]
   resources :cart_items, only:[:create, :update, :destroy]
   resources :orders ,except:[:edit, :update]
-  resources :users, only:[:show]
+  resources :users, only:[:show] do
+    resources :addresses
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
